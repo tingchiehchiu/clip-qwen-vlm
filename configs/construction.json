@@ -1,0 +1,35 @@
+{
+  "clip_model_path": "storage/models/clip-vit-large-patch14-336",
+  "qwen_model_path": "storage/models/Qwen2.5-0.5B-Instruct",
+  "adapter_type": "linear",
+  "vision_layer": -2,
+  "drop_cls": true,
+  "seed": 17,
+  "max_sequence_length": 2048,
+  "max_new_tokens": 128,
+  "align": {
+    "data_json": "storage/data/cc3m/chat.json",
+    "image_root": "storage/data/cc3m/images",
+    "epochs": 1,
+    "batch_size": 1,
+    "gradient_accumulation": 8,
+    "learning_rate": 0.001,
+    "warmup_ratio": 0.03,
+    "weight_decay": 0.0,
+    "scheduler": "cosine",
+    "max_grad_norm": 1.0
+  },
+  "instruct": {
+    "data_json": "storage/data/instruct/llava_instruct_150k.json",
+    "image_root": "storage/data/instruct/images/train2017",
+    "epochs": 3,
+    "batch_size": 1,
+    "gradient_accumulation": 8,
+    "learning_rate": 0.00002,
+    "warmup_ratio": 0.03,
+    "weight_decay": 0.0,
+    "scheduler": "cosine",
+    "max_grad_norm": 1.0,
+    "gradient_checkpointing": true
+  }
+}
